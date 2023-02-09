@@ -1,10 +1,11 @@
 const socket = io()
 
 socket.on("message", function (message) {
-    $("#messages").append('<li>' + message + '</li>')
+    $("#messages").append('<li class="message">' + message + '</li>')
 })
 
-$("#message__form").submit(function () {
+$("#message-form").submit(function (event) {
+    event.preventDefault()
     let message = $("#message").val()
     socket.send(message)
     $("#message").val("")

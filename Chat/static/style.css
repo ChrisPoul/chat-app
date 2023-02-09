@@ -1,21 +1,61 @@
-.body {
-    max-width: 70%;
-    margin-left: auto;
-    background-color: gray;
+body {
     margin-top: 0;
 }
 
+body::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
 .conversation {
+    height: 150vh;
+    width: 70%;
     background-color: wheat;
-    padding: 2% 4%;
+    float: right;
+}
+
+.sidebar {
+    height: 150vh;
+    background-color: aqua;
+    float: left;
+    width: 30%;
 }
 
 .messages {
+    padding: 0 4% 2% 8%;
     align-items: center;
-    padding: 0;
     list-style: none;
+    margin: 0;
 }
 
 .message {
-    width: 50%;
+    border-radius: 5px;
+    background-color: white;
+    padding: 0.2em 0.5em;
+    margin: 1em;
+    width: fit-content;
+}
+
+.message-trail {
+    background-color: #e7eaf6;
+    padding: 9px 0.7em;
+    display: flex;
+    margin-left: auto;
+    width: 70%;
+}
+
+.message-trail>* {
+    margin: 0 0.5em;
+    font-size: larger;
+}
+
+.message-trail__input {
+    height: 2.9em;
+    border: none;
+}
+
+.message-trail__icon {
+    border: 0;
+    background-color: transparent;
 }

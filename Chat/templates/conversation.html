@@ -1,11 +1,19 @@
 <div class="conversation">
     <ul id="messages" class="messages">
         {% for message in messages %}
-        <li>{{ message.contents }}</li>
+        <li class="message">{{ message.contents }}</li>
         {% endfor %}
     </ul>
-    <form id="message__form">
-        <input id="message" class="message" placeholder="Escribe un mensaje aquí">
-        <button><i class="fa-solid fa-paper-plane"></i></button>
+    <form id="message-form" class="message-trail fixed-bottom">
+        <button class="message-trail__icon">
+            <i class="fa-regular fa-face-smile"></i>
+        </button>
+        <button class="message-trail__icon">
+            <i class="fa-solid fa-paperclip"></i>
+        </button>
+        <input id="message" class="form-control message-trail__input" placeholder="Escribe un mensaje aquí">
+        <button class="message-trail__icon">
+            <i class="fa-solid fa-paper-plane"></i>
+        </button>
     </form>
 </div>
