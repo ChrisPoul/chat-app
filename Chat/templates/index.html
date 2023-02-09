@@ -10,16 +10,7 @@
 </head>
 
 <body class="body">
-    <ul id="messages" class="messages">
-        {% for message in messages %}
-        <li>{{ message.contents }}</li>
-        {% endfor %}
-    </ul>
-    <form id="message__form">
-        <input id="message">
-        <button>Send</button>
-    </form>
-
+    {% include "conversation.html" %}
     {% include "dependencies.html" %}
 </body>
 

@@ -1,9 +1,21 @@
 .body {
-    max-width: 80%;
-    margin: auto;
+    max-width: 70%;
+    margin-left: auto;
+    background-color: gray;
+    margin-top: 0;
+}
+
+.conversation {
+    background-color: wheat;
+    padding: 2% 4%;
 }
 
 .messages {
     align-items: center;
     padding: 0;
+    list-style: none;
+}
+
+.message {
+    width: 50%;
 }
