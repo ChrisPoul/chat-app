@@ -9,16 +9,18 @@
     <title>Coup</title>
 </head>
 
-<body>
-    <ul id="messages">
+<body class="body">
+    <ul id="messages" class="messages">
         {% for message in messages %}
         <li>{{ message.contents }}</li>
         {% endfor %}
     </ul>
-    <input id="message">
-    <button id="sendButton">Send</button>
+    <form id="message__form">
+        <input id="message">
+        <button id="sendButton">Send</button>
+    </form>
 
-    {% include "scripts.html" %}
+    {% include "dependencies.html" %}
 </body>
 
 </html>

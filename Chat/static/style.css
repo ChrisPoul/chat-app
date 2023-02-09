@@ -1,0 +1,9 @@
+.body {
+    max-width: 80%;
+    margin: auto;
+}
+
+.messages {
+    align-items: center;
+    padding: 0;
+}
