@@ -4,6 +4,7 @@ from sqlalchemy import (
 )
 from sqlalchemy.sql import func
 from . import database, Model
+from .shcema import MessageSchema
 
 
 class Message(database.Model, Model):
@@ -12,3 +13,4 @@ class Message(database.Model, Model):
     )
     contents: str = Column(String(100), nullable=False, unique=False)
     sent_at: datetime = Column(DateTime, server_default=func.now())
+    schema = MessageSchema()

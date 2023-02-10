@@ -1,14 +1,16 @@
 <div class="conversation">
     <ul id="messages" class="messages">
         {% for message in messages %}
-        <li class="message">{{ message.contents }}</li>
+        <li class="message">
+            {{ message.contents }} <div class="message__time-sent">{{ message.sent_at.strftime('%I:%M %p') }}</div>
+        </li>
         {% endfor %}
     </ul>
     <form id="message-form" class="message-trail fixed-bottom">
-        <button class="message-trail__icon">
+        <button type="button" class="message-trail__icon">
             <i class="fa-regular fa-face-smile"></i>
         </button>
-        <button class="message-trail__icon">
+        <button type="button" class="message-trail__icon">
             <i class="fa-solid fa-paperclip"></i>
         </button>
         <input id="message" class="form-control message-trail__input" placeholder="Escribe un mensaje aquí">

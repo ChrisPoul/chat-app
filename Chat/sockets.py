@@ -7,9 +7,13 @@ socketio = SocketIO()
 
 
 @socketio.on("message")
-def handle_message(message):
-    Message(contents=message).add()
-    send(message, broadcast=True)
+def handle_message(message_contents: str):
+    message = Message(contents=message_contents)
+    message.add()
+    send(
+        Message.schema.dump(message),
+        broadcast=True
+    )
 
 
 @socketio.on('join')

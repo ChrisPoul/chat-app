@@ -9,7 +9,7 @@ body::after {
 }
 
 .conversation {
-    height: 150vh;
+    min-height: 100vh;
     width: 70%;
     background-color: wheat;
     float: right;
@@ -23,18 +23,24 @@ body::after {
 }
 
 .messages {
-    padding: 0 4% 2% 8%;
+    padding: 0 4% 3em 8%;
     align-items: center;
     list-style: none;
-    margin: 0;
 }
 
 .message {
     border-radius: 5px;
     background-color: white;
-    padding: 0.2em 0.5em;
+    padding: 0.3em 0.5em;
     margin: 1em;
     width: fit-content;
+}
+
+.message__time-sent {
+    font-size: x-small;
+    display: inline-block;
+    margin-left: 1em;
+    font-weight: 100;
 }
 
 .message-trail {
