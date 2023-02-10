@@ -3,7 +3,7 @@ from sqlalchemy import (
     Column, String, DateTime
 )
 from sqlalchemy.sql import func
-from . import database, Model
+from .. import database, Model
 from .shcema import MessageSchema
 
 

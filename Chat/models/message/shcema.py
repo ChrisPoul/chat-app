@@ -9,5 +9,5 @@ class MessageSchema(Schema):
 
     @post_load
     def make_message(self, message_data: dict[str, any], **kwargs):
-        from .message import Message
+        from . import Message
         return Message(**message_data)
