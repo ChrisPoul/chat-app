@@ -9,7 +9,7 @@ db_password = os.environ.get('DB_PASSWORD', default='')
 db_port = os.environ.get('DB_PORT', default='3306')
 secret_key = os.environ.get('SECRET_KEY', default='dev')
 
-if secret_key is 'dev':
+if secret_key == 'dev':
     db_uri = f'sqlite:///{app.instance_path}/{db_name}.sqlite'
 else:
     db_uri = f"{db_dialect}://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
