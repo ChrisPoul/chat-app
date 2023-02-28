@@ -7,28 +7,27 @@ socketio = SocketIO()
 
 
 @socketio.on("message")
-def handle_message(message_contents: str):
-    message = Message(contents=message_contents)
+def handle_message(message_json: dict[str, any]):
+    message: Message = Message.schema.load(message_json)
     message.add()
     send(
         Message.schema.dump(message),
-        broadcast=True
+        broadcast=True,
+        to=message.room
     )
 
 
 @socketio.on('join')
-def on_join(data):
-    username = data['username']
-    room = data['room']
-    print("join")
+def handle_join(data):
+    room = data["room"]
+    print(data)
     join_room(room)
-    send(username + ' has entered the room.', to=room)
+    emit("join", data, to=room)
 
 
 @socketio.on('leave')
-def on_leave(data):
-    username = data['username']
-    room = data['room']
-    print("left")
+def handle_leave(data):
+    room = data["room"]
+    print(data)
     leave_room(room)
-    send(username + ' has left the room.', to=room)
+    emit("leave", data, to=room)

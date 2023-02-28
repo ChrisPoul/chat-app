@@ -18,8 +18,8 @@ body {
 
 .messages {
     padding: 0 4% 3em 8%;
-    align-items: center;
     list-style: none;
+    direction: rtl;
 }
 
 .message {

@@ -5,7 +5,8 @@ from marshmallow import (
 
 class MessageSchema(Schema):
     contents = fields.String(required=True,)
-    sent_at = fields.DateTime(dump_only=True)
+    room = fields.String(required=True)
+    sent_at = fields.DateTime()
 
     @post_load
     def make_message(self, message_data: dict[str, any], **kwargs):

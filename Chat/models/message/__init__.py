@@ -12,5 +12,6 @@ class Message(database.Model, Model):
         String, primary_key=True, default=Model.generate_unique_id
     )
     contents: str = Column(String(100), nullable=False, unique=False)
+    room: str = Column(String(100), nullable=False, unique=False)
     sent_at: datetime = Column(DateTime, server_default=func.now())
     schema = MessageSchema()
