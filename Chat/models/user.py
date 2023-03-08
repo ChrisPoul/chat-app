@@ -11,3 +11,14 @@ class User(database.Model, Model):
         String, default=Model.generate_unique_id, primary_key=True
     )
     name: str = Column(String(200), nullable=False, unique=False)
+
+    @property
+    def is_authenticated(self):
+        return True
+
+    @property
+    def is_active(self):
+        return True
+
+    def get_id(self):
+        return self.id

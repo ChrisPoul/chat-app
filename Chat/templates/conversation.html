@@ -1,4 +1,9 @@
 <div class="conversation">
+    <div class="user-trail">
+        {% if current_user.is_authenticated %}
+        Hi {{ current_user.name }}!
+        {% endif %}
+    </div>
     <ul id="messages" class="messages">
         {% for message in messages %}
         <li class="message">

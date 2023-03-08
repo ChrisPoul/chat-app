@@ -19,7 +19,6 @@ body {
 .messages {
     padding: 0 4% 3em 8%;
     list-style: none;
-    direction: rtl;
 }
 
 .message {
